@@ -1,0 +1,17 @@
+[
+	{
+			"Player": "Hello!"
+	},
+	{
+			"Player": "I can speak now!"
+	},
+	{
+			"NPC": "That's great, Dear player!"
+	},
+	{
+			"NPC": "I'm happy for you!"
+	},
+	{
+			"EOD": "EOD"
+	}
+]

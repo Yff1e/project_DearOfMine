@@ -1,0 +1,46 @@
+[
+	{
+		"NPC3": "See those two?"
+	},
+	{
+		"Player": "Huh?"
+	},
+	{
+		"NPC3": "You blind? Right beside me fool"
+	},
+	{
+		"NPC3": "What do you think of those two?"
+	},
+	{
+		"?": [
+			{
+				"1": [
+					"They alright",
+					{
+						"Player": "They alright? I guess."
+					},
+					{
+						"Holly": "Alright? Hmphh..."
+					},
+					{
+						"EOD": "EOD"
+					}
+				]
+			},
+			{
+				"2": [
+					"I don't know them",
+					{
+						"Player": "I don't... know."
+					},
+					{
+						"NPC3": "Better keep it that way. They are fools"
+					},
+					{
+						"EOD": "EOD"
+					}
+				]
+			}
+		]
+	}
+]

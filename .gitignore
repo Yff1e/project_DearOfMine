@@ -1,0 +1,13 @@
+# This file is .gitignore
+
+# Ignore all of the following:
+Library/
+Temp/
+obj/
+.vs/
+UserSettings/
+Logs/
+*.csproj
+*.sln
+.vsconfig
+ignore.conf

@@ -1,0 +1,37 @@
+[
+  {
+    "Mom": "Where am I? Is it time for breakfast?"
+  },
+  {
+    "?": [
+      {
+        "1": [
+          "It's breakfast time. Come on.",
+          {
+            "Mom": "Mom nods slowly, still a little confused."
+          },
+          {
+            "Player": "You sound tired even to yourself."
+          },
+          {
+            "EOD": "EOD"
+          }
+        ]
+      },
+      {
+        "2": [
+          "Good morning, Mom. Let's sit together and have breakfast, okay?",
+          {
+            "Mom": "Mom smiles gently. She takes your hand."
+          },
+          {
+            "Player": "You sit at the table. Maybe today will be okay."
+          },
+          {
+            "EOD": "EOD"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "thoughts": {
+    "act1_scene1": {
+      "choice1": {
+        "thought": "I just need to get through the morning. She needs her routine.",
+        "journalEntry": "Entry added to journal"
+      },
+      "choice2": {
+        "thought": "...maybe if I'm gentle about it, she won't be confused.",
+        "journalEntry": "Entry added to journal"
+      }
+    },
+    "act2_scene1": {
+      "choice1": {
+        "thought": "...I just can't leave her alone. It wouldn't be right.",
+        "journalEntry": "Entry added to journal"
+      },
+      "choice2": {
+        "thought": "They always do this. I'm tired of having to choose.",
+        "journalEntry": "Entry added to journal"
+      }
+    },
+    "act3_scene1": {
+      "choice1": {
+        "thought": "I'm frustrated. She should know this by now... wait, why am I angry at her?",
+        "journalEntry": "Entry added to journal"
+      },
+      "choice2": {
+        "thought": "Okay, maybe we can just... move past this. Look at something else.",
+        "journalEntry": "Entry added to journal"
+      }
+    }
+  }
+}
