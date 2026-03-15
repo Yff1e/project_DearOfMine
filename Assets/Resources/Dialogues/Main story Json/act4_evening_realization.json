@@ -1,0 +1,41 @@
+[
+  {
+    "Player": "You're in your room. Homework sits on your desk, untouched."
+  },
+  {
+    "Player": "It's still the same night. You can hear her in the other room, confused."
+  },
+  {
+    "Player": "You close your eyes. You're so tired."
+  },
+  {
+    "CUTSCENE": "BLACK_SCREEN_WITH_MUSIC"
+  },
+  {
+    "Internal": "It was never like this before..."
+  },
+  {
+    "Internal": "Before, she would remember..."
+  },
+  {
+    "Internal": "Why am I so angry at her?"
+  },
+  {
+    "Internal": "It's not her fault. It's the disease."
+  },
+  {
+    "Internal": "But I'm so tired..."
+  },
+  {
+    "Internal": "I have to keep trying. For her."
+  },
+  {
+    "Player": "You sit on your bed, looking out the window into the darkness."
+  },
+  {
+    "Player": "Maybe tomorrow will be better."
+  },
+  {
+    "EOD": "END_OF_DEMO"
+  }
+]

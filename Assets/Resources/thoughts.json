@@ -29,6 +29,12 @@
         "thought": "Okay, maybe we can just... move past this. Look at something else.",
         "journalEntry": "Entry added to journal"
       }
+    },
+    "act4_scene1": {
+      "cutscene": {
+        "thought": "Reflected on that day...",
+        "journalEntry": "Journal entry added."
+      }
     }
   }
 }

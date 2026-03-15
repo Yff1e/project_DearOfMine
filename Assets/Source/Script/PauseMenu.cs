@@ -1,10 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public Button openJournalButton; // ✅ ADD THIS
 
     // Update is called once per frame
     void Update()
@@ -26,6 +28,35 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+
+    private void Start()
+    {
+        // ✅ ADD THIS: Setup journal button
+        if (openJournalButton != null)
+        {
+            openJournalButton.onClick.AddListener(OpenJournal);
+        }
+    }
+
+    // ✅ ADD THIS METHOD
+    public void OpenJournal()
+    {
+        if (JournalManager.Instance != null)
+        {
+            // Close pause menu
+            if (pauseMenuUI != null)
+                pauseMenuUI.SetActive(false);
+
+            // Open journal
+            JournalManager.Instance.OpenJournal();
+            Debug.Log("[PauseMenu] Journal opened");
+        }
+        else
+        {
+            Debug.LogWarning("[PauseMenu] JournalManager not found!");
+        }
+    }
+
     public void Resume()
     {
         pauseMenuUI.SetActive(false);

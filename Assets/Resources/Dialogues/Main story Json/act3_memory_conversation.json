@@ -1,0 +1,46 @@
+[
+  {
+    "Player": "She asked this already. Five minutes ago. Maybe ten."
+  },
+  {
+    "Mom": "When is your father coming home? I haven't seen him all day."
+  },
+  {
+    "?": [
+      {
+        "1": [
+          "Mom, Dad is working abroad. He's been there for three years now.",
+          {
+            "Mom": "Working abroad? For so long? That doesn't sound right..."
+          },
+          {
+            "Mom": "Her face crumples in confusion and sadness."
+          },
+          {
+            "Player": "I'm frustrated. She should remember this... but she can't help it."
+          },
+          {
+            "EOD": "EOD"
+          }
+        ]
+      },
+      {
+        "2": [
+          "He's busy with work, but look—remember this beach trip?",
+          {
+            "Mom": "Oh... yes. That was lovely. The water was so warm."
+          },
+          {
+            "Mom": "She smiles, her eyes clearing as she looks at the old photo."
+          },
+          {
+            "Player": "Okay, maybe we can just... move past this. Look at something else."
+          },
+          {
+            "EOD": "EOD"
+          }
+        ]
+      }
+    ]
+  }
+]

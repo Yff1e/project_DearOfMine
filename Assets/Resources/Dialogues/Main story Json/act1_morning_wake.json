@@ -8,10 +8,10 @@
         "1": [
           "It's breakfast time. Come on.",
           {
-            "Mom": "Mom nods slowly, still a little confused."
+            "Mom": "She nods slowly, still confused, trying to follow your lead."
           },
           {
-            "Player": "You sound tired even to yourself."
+            "Player": "You sound tired even to yourself. The words came out sharper than you meant."
           },
           {
             "EOD": "EOD"
@@ -22,10 +22,10 @@
         "2": [
           "Good morning, Mom. Let's sit together and have breakfast, okay?",
           {
-            "Mom": "Mom smiles gently. She takes your hand."
+            "Mom": "She smiles gently and takes your hand, her grip warm and familiar."
           },
           {
-            "Player": "You sit at the table. Maybe today will be okay."
+            "Player": "You sit at the table together. Maybe today will be okay."
           },
           {
             "EOD": "EOD"

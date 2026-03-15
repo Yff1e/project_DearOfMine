@@ -1,0 +1,46 @@
+[
+  {
+    "Friend": "Hey! We're heading out to the mall. You coming?"
+  },
+  {
+    "Friend": "Come on, you need to get out. You've been stuck here all week."
+  },
+  {
+    "?": [
+      {
+        "1": [
+          "I can't right now, I'm busy with some things at home.",
+          {
+            "Friend": "Oh... okay. Maybe another time then."
+          },
+          {
+            "Friend": "They exchange glances. You can tell they don't really understand."
+          },
+          {
+            "Player": "They don't need to know. It's easier this way."
+          },
+          {
+            "EOD": "EOD"
+          }
+        ]
+      },
+      {
+        "2": [
+          "I really wish I could, but I'm just not up for it today.",
+          {
+            "Friend": "That's okay. We get it. Take care of yourself."
+          },
+          {
+            "Friend": "They smile sympathetically before heading out."
+          },
+          {
+            "Player": "I'm just exhausted. I don't have it in me right now."
+          },
+          {
+            "EOD": "EOD"
+          }
+        ]
+      }
+    ]
+  }
+]

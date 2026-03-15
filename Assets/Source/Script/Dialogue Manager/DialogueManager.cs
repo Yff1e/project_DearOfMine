@@ -1,4 +1,4 @@
-using Mono.Cecil.Cil;
+﻿using Mono.Cecil.Cil;
 using UnityEngine;
 using UnityEngine.UI;
 using LitJson;
@@ -396,6 +396,18 @@ public class DialogueManager : MonoBehaviour
         Debug.Log($"[DialogueManager] {journalEntryMessage}");
 
         ShowThoughtNotification(thoughtProcess, journalEntryMessage);
+
+        // ✅ ADD THIS: Log to JournalManager
+        if (JournalManager.Instance != null)
+        {
+            JournalManager.Instance.LogEntry(
+                currentActNumber,
+                currentSceneNumber,
+                choiceText,
+                thoughtProcess,
+                "" // Consequence will be filled after dialogue plays
+            );
+        }
     }
 
     /// <summary>
@@ -529,6 +541,12 @@ public class DialogueManager : MonoBehaviour
         currentActNumber = act;
         currentSceneNumber = scene;
         Debug.Log($"[DialogueManager] Scene set to Act {act}, Scene {scene}");
+    }
+
+    // Add this public accessor method inside the DialogueManager class
+    public bool IsInDialogue()
+    {
+        return inDialogue;
     }
 
     private void EndDialogue()
