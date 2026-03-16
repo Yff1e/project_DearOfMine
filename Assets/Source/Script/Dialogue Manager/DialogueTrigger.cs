@@ -19,12 +19,12 @@ public class DialogueTrigger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(dialogueManager == null)
+        if (dialogueManager == null)
         {
             dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         }
 
-        if(npcTransform == null)
+        if (npcTransform == null)
         {
             npcTransform = this.transform;
         }
@@ -35,7 +35,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-           inTrigger = true;
+            inTrigger = true;
         }
 
     }
@@ -60,7 +60,7 @@ public class DialogueTrigger : MonoBehaviour
             if (dialogueLoaded)
             {
                 dialogueLoaded = dialogueManager.printLine();
-                
+
             }
         }
     }
@@ -68,7 +68,7 @@ public class DialogueTrigger : MonoBehaviour
     private void LoadDialogueForCurrentAct()
     {
         int currentAct = 1;
-        
+
         // Get current act from GameManager or SceneTransitionManager
         SceneTransitionManager stm = FindFirstObjectByType<SceneTransitionManager>();
         if (stm != null)

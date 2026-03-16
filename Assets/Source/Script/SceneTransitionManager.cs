@@ -155,6 +155,6 @@ public class SceneTransitionManager : MonoBehaviour
 
         if (friendsNPC != null)
             friendsNPC.SetActive(false);
-        
+
     }
 }

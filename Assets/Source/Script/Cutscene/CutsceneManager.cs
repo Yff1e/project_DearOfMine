@@ -66,12 +66,12 @@ public class CutsceneManager : MonoBehaviour
             }
 
             narrationData = JsonMapper.ToObject(narrationFile.text);
-            
+
             // Parse lines from JSON
             if (narrationData != null && narrationData.Keys.Contains("act4_cutscene"))
             {
                 JsonData cutsceneData = narrationData["act4_cutscene"];
-                
+
                 if (cutsceneData.Keys.Contains("narration_lines"))
                 {
                     JsonData linesArray = cutsceneData["narration_lines"];
@@ -280,7 +280,7 @@ public class CutsceneManager : MonoBehaviour
     // Example for your study table trigger script
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
         {
             CutsceneManager cutsceneManager = FindFirstObjectByType<CutsceneManager>();
             if (cutsceneManager != null)

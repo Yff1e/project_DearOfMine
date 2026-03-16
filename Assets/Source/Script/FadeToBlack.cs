@@ -21,7 +21,7 @@ public class FadeToBlack : MonoBehaviour
         fadeCanvasGroup.alpha = 0f;
         fadeCanvasGroup.blocksRaycasts = false;
     }
- /// Fade to black over specified duration
+    /// Fade to black over specified duration
     public IEnumerator FadeOut(float duration = -1f)
     {
         if (duration < 0f) duration = defaultFadeDuration;
