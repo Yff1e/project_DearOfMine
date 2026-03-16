@@ -1,3 +1,24 @@
 {
-  "entries": []
+    "entries": [
+        {
+            "actNumber": 1,
+            "sceneNumber": 1,
+            "choiceText": "Good morning, Mom. Let's sit together and have breakfast, okay?",
+            "thoughtProcess": "...maybe if I'm gentle about it, she won't be confused.",
+            "consequence": "",
+            "strategyExplanation": "I heard my voice come out sharp. That's what happens when I'm tired—she picks up on it, gets more confused. I didn't want to sound frustrated, but... I was. Next time, maybe I can try to soften my words, even if I'm exhausted. She needs calm more than she needs speed.",
+            "timestamp": 9.874176025390625,
+            "entryIndex": 1
+        },
+        {
+            "actNumber": 2,
+            "sceneNumber": 1,
+            "choiceText": "I can't right now, I'm busy with some things at home.",
+            "thoughtProcess": "...I just can't leave her alone. It wouldn't be right.",
+            "consequence": "",
+            "strategyExplanation": "Being honest about being tired felt vulnerable, but they understood. They didn't judge. I'm starting to realize that asking for help—or just being honest about struggling—isn't weakness. It's actually what keeps me from breaking.",
+            "timestamp": 24.388282775878908,
+            "entryIndex": 2
+        }
+    ]
 }

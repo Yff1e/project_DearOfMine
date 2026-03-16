@@ -1,16 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
-public class JournalUI : MonoBehaviour
+public class UI : MonoBehaviour
 {
-    public TMP_Text leftEntryCounterText, leftSceneLabel, leftChoiceText, leftThoughtText, leftExplanationText;
-    public TMP_Text rightEntryCounterText, rightSceneLabel, rightChoiceText, rightThoughtText, rightExplanationText;
-    public Button previousButton, nextButton;
+    // Single panel elements
+    public TMP_Text choiceText;
+    public TMP_Text thoughtText;
+    public TMP_Text explanationText;
+    public TMP_Text entryCounterText;
+
+    public Button previousButton;
+    public Button nextButton;
     public TMP_Text exitHintText;
+
     public JournalManager journalManager;
 
-    private int currentLeftPageIndex = 0;
+    private int currentEntryIndex = 0;
     private CanvasGroup canvasGroup;
 
     private void Awake()
@@ -23,14 +30,15 @@ public class JournalUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.J))
+        // Using new Input System
+        if (Keyboard.current.tabKey.wasPressedThisFrame || Keyboard.current.jKey.wasPressedThisFrame)
         {
             if (canvasGroup.alpha == 0)
                 ShowJournal();
             else
                 HideJournal();
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && canvasGroup.alpha > 0)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame && canvasGroup.alpha > 0)
         {
             HideJournal();
         }
@@ -38,80 +46,85 @@ public class JournalUI : MonoBehaviour
 
     public void ShowJournal()
     {
+        int entryCount = journalManager.GetEntryCount();
+
+        // If no entries, show empty state
+        if (entryCount == 0)
+        {
+            choiceText.text = "";
+            thoughtText.text = "";
+            explanationText.text = "";
+            entryCounterText.text = $"Entry 0 of {entryCount}";
+            previousButton.interactable = false;
+            nextButton.interactable = false;
+            Debug.Log("[JournalUI] No entries yet");
+        }
+        else
+        {
+            // Show most recent entry
+            currentEntryIndex = entryCount - 1;
+            DisplayCurrentEntry();
+        }
+
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts = true;
-        DisplayTwoEntries(currentLeftPageIndex, currentLeftPageIndex + 1);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void HideJournal()
     {
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    public void DisplayTwoEntries(int leftIndex, int rightIndex)
+    public void DisplayCurrentEntry()
     {
+        int entryCount = journalManager.GetEntryCount();
+
+        // Safety check
+        if (currentEntryIndex < 0 || currentEntryIndex >= entryCount)
+        {
+            Debug.LogWarning("[JournalUI] Invalid entry index");
+            return;
+        }
+
         var entries = journalManager.GetAllEntries();
-        int count = journalManager.GetEntryCount();
+        var entry = entries[currentEntryIndex];
 
-        // Left Page
-        if (leftIndex < count)
-        {
-            var leftEntry = entries[leftIndex];
-            leftEntryCounterText.text = $"Entry {leftEntry.entryIndex} of {count}";
-            leftSceneLabel.text = $"Act {leftEntry.actNumber} - Scene {leftEntry.sceneNumber}";
-            leftChoiceText.text = leftEntry.choiceText;
-            leftThoughtText.text = leftEntry.thoughtProcess;
-            leftExplanationText.text = leftEntry.strategyExplanation;
-        }
-        else
-        {
-            leftEntryCounterText.text = "";
-            leftSceneLabel.text = "";
-            leftChoiceText.text = "";
-            leftThoughtText.text = "";
-            leftExplanationText.text = "";
-        }
+        // Display entry data (all retrieved from journal, NOT placeholders)
+        entryCounterText.text = $"Entry {currentEntryIndex + 1} of {entryCount}";
+        choiceText.text = entry.choiceText;
+        thoughtText.text = entry.thoughtProcess;
+        explanationText.text = entry.strategyExplanation;
 
-        // Right Page
-        if (rightIndex < count)
-        {
-            var rightEntry = entries[rightIndex];
-            rightEntryCounterText.text = $"Entry {rightEntry.entryIndex} of {count}";
-            rightSceneLabel.text = $"Act {rightEntry.actNumber} - Scene {rightEntry.sceneNumber}";
-            rightChoiceText.text = rightEntry.choiceText;
-            rightThoughtText.text = rightEntry.thoughtProcess;
-            rightExplanationText.text = rightEntry.strategyExplanation;
-        }
-        else
-        {
-            rightEntryCounterText.text = "";
-            rightSceneLabel.text = "";
-            rightChoiceText.text = "";
-            rightThoughtText.text = "";
-            rightExplanationText.text = "";
-        }
+        // Update button states
+        previousButton.interactable = currentEntryIndex > 0;
+        nextButton.interactable = currentEntryIndex < entryCount - 1;
 
-        previousButton.interactable = currentLeftPageIndex > 0;
-        nextButton.interactable = (currentLeftPageIndex + 2) < count;
+        Debug.Log($"[JournalUI] Displaying entry {currentEntryIndex + 1}: {entry.choiceText}");
     }
 
     public void NextEntry()
     {
-        int count = journalManager.GetEntryCount();
-        if ((currentLeftPageIndex + 2) < count)
+        int entryCount = journalManager.GetEntryCount();
+        if (currentEntryIndex < entryCount - 1)
         {
-            currentLeftPageIndex += 2;
-            DisplayTwoEntries(currentLeftPageIndex, currentLeftPageIndex + 1);
+            currentEntryIndex++;
+            DisplayCurrentEntry();
         }
     }
 
     public void PreviousEntry()
     {
-        if (currentLeftPageIndex >= 2)
+        if (currentEntryIndex > 0)
         {
-            currentLeftPageIndex -= 2;
-            DisplayTwoEntries(currentLeftPageIndex, currentLeftPageIndex + 1);
+            currentEntryIndex--;
+            DisplayCurrentEntry();
         }
     }
 }

@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
                 pauseMenuUI.SetActive(false);
 
             // Open journal
-            JournalManager.Instance.OpenJournal();
+
             Debug.Log("[PauseMenu] Journal opened");
         }
         else

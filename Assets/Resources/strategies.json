@@ -2,26 +2,26 @@
   "strategies": {
     "act1_scene1": {
       "choice1": {
-        "explanation": "When caregivers are exhausted or rushed, it can show in their tone. While getting through daily tasks is necessary, patients may sense frustration or impatience, which can increase their confusion or anxiety. Gentle communication, even when you're tired, helps create a calmer environment for both of you."
+        "explanation": "I heard my voice come out sharp. That's what happens when I'm tired—she picks up on it, gets more confused. I didn't want to sound frustrated, but... I was. Next time, maybe I can try to soften my words, even if I'm exhausted. She needs calm more than she needs speed."
       },
       "choice2": {
-        "explanation": "Gentle communication helps reduce confusion. Speaking calmly and slowly shows the patient they're in a safe space, which decreases anxiety and improves cooperation during daily routines. Taking a moment to be warm and patient, even when you're tired, can make the entire day smoother for both caregiver and patient."
+        "explanation": "When I spoke gently, she relaxed. I could see it. The whole morning became easier—not just for her, but for me too. It's strange how much a calm voice matters. Maybe that's something I can actually control, even on the hard days."
       }
     },
     "act2_scene1": {
       "choice1": {
-        "explanation": "Many caregivers hide the reality of their situation from friends and family, often out of shame, pride, or the belief that others 'won't understand.' While this can feel easier in the short term, isolation is one of the leading causes of caregiver burnout. Maintaining some social connections—even small ones—is crucial for long-term mental health."
+        "explanation": "I didn't tell them the truth. It felt easier that way. But sitting alone after they left... I realized how much I needed someone to talk to. I wonder if keeping this secret is actually making things harder. Maybe I should try telling someone next time, even if it's scary."
       },
       "choice2": {
-        "explanation": "Admitting exhaustion honestly, without guilt or excuses, is a sign of self-awareness and emotional health. While it can feel vulnerable to show this side to friends, being open about your limits allows others to understand your situation better. You don't have to carry everything alone, and saying 'no' when you need to is an act of self-care, not selfishness."
+        "explanation": "Being honest about being tired felt vulnerable, but they understood. They didn't judge. I'm starting to realize that asking for help—or just being honest about struggling—isn't weakness. It's actually what keeps me from breaking."
       }
     },
     "act3_scene1": {
       "choice1": {
-        "explanation": "Correcting memory errors directly can cause emotional distress for patients with dementia. While it feels natural to want them to 'remember,' insisting on facts they've forgotten can lead to frustration, sadness, or agitation. This approach rarely helps them remember and often creates conflict. It's okay to feel frustrated—but redirecting conversations gently is usually more effective than correcting."
+        "explanation": "I corrected her and watched her face crumple when she remembered, briefly, that Dad is gone. I hate that moment. It's like I'm making her sad all over again. Maybe next time I could just... let it go, find something else to talk about instead of insisting on what she should remember."
       },
       "choice2": {
-        "explanation": "Gentle redirection validates the patient's feelings while guiding them away from distressing topics. Instead of insisting on painful truths, this technique allows the conversation to shift to something positive or neutral. This preserves the patient's dignity, reduces anxiety, and prevents emotional spirals. Redirection is one of the most recommended strategies in dementia care."
+        "explanation": "When I redirected to the photo, she smiled. The confusion passed without turning into sadness. It's not about avoiding the truth—it's about not forcing her to feel pain unnecessarily. She can't remember anyway, so why make her hurt over it?"
       }
     }
   }

@@ -42,8 +42,7 @@ public class JournalManager : MonoBehaviour
             return;
         }
 
-        if (journalPanel != null)
-            journalPanel.SetActive(false);
+        // REMOVED: journalPanel.SetActive(false); - JournalUI handles visibility now
 
         // Setup button listeners
         if (previousButton != null)
@@ -161,42 +160,34 @@ public class JournalManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Open journal UI and display first/last entry
-    /// </summary>
-    public void OpenJournal()
-    {
-        if (entries.Count == 0)
-        {
-            Debug.LogWarning("[JournalManager] No entries to display!");
-            return;
-        }
-
-        journalPanel.SetActive(true);
-        currentEntryIndex = entries.Count - 1; // Show most recent
-        DisplayCurrentEntry();
-
-        // Pause game
-        Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    /// <summary>
     /// Close journal UI
     /// </summary>
     public void CloseJournal()
     {
-        if (journalPanel != null)
-            journalPanel.SetActive(false);
+        // JournalUI handles closing with canvasGroup.alpha = 0
+        Debug.Log("[JournalManager] Close journal called");
+    }
 
-        // Resume game
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+    public void ShowPreviousEntry()
+    {
+        if (currentEntryIndex > 0)
+        {
+            currentEntryIndex--;
+            DisplayCurrentEntry();
+        }
+    }
+
+    public void ShowNextEntry()
+    {
+        if (currentEntryIndex < entries.Count - 1)
+        {
+            currentEntryIndex++;
+            DisplayCurrentEntry();
+        }
     }
 
     /// <summary>
-    /// Display current entry in UI
+    /// Display current entry in UI (legacy - not used by JournalUI)
     /// </summary>
     private void DisplayCurrentEntry()
     {
@@ -223,24 +214,6 @@ public class JournalManager : MonoBehaviour
 
         if (nextButton != null)
             nextButton.interactable = currentEntryIndex < entries.Count - 1;
-    }
-
-    public void ShowPreviousEntry()
-    {
-        if (currentEntryIndex > 0)
-        {
-            currentEntryIndex--;
-            DisplayCurrentEntry();
-        }
-    }
-
-    public void ShowNextEntry()
-    {
-        if (currentEntryIndex < entries.Count - 1)
-        {
-            currentEntryIndex++;
-            DisplayCurrentEntry();
-        }
     }
 
     public int GetEntryCount()
